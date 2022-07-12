@@ -1,8 +1,7 @@
 package io.raveerocks.diceroller
 
+import org.junit.Assert.assertTrue
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,8 +9,15 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
+    private val randomNumberGenerator = RandomNumberGenerator()
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun numberGeneratedIsInRange() {
+        val numberGenerated = randomNumberGenerator.generateRandomNumber()
+        assertTrue(numberGenerated > 0)
+        assertTrue(numberGenerated < 7)
     }
+
+
 }
